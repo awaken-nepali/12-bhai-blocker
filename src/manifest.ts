@@ -10,8 +10,6 @@ export default defineManifest({
   name: '12 Bhai, Propaganda Blocker',
   description: 'Blocks access to sites flagged as fake or spreading propaganda.',
   permissions: [
-    'declarativeNetRequest',
-    'declarativeNetRequestWithHostAccess',
     'storage',
     'alarms',
     'tabs', // Required to close and open tabs
