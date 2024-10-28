@@ -5,17 +5,14 @@ function normalizeDomain(url: string) {
   return url.replace(/^(https?:\/\/)?(www\.)?/, '').toLowerCase()
 }
 
-function isBlockedSite(currentUrl: string, blockedSites: string[]) {
+function isBlockedSite(currentUrl: string, blockedSites: { site: string }[]) {
   const normalizedCurrentUrl = normalizeDomain(currentUrl)
-  return blockedSites.some((site) => normalizedCurrentUrl === normalizeDomain(site))
+  return blockedSites.some(({ site }) => normalizedCurrentUrl === normalizeDomain(site))
 }
-
-// Example usage
-const currentUrl = 'ekantipur.com'
 
 // Fetch the blocked sites from storage
 chrome.storage.local.get('blockedSites', (result) => {
-  const blockedSites: string[] = result.blockedSites || []
+  const blockedSites = JSON.parse(result.blockedSites || []) as { site: string }[]
   const currentUrl = window.location.hostname
 
   console.log('Current URL:', currentUrl)

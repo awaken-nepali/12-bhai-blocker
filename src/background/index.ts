@@ -1,12 +1,16 @@
-let blockedSites: any = []
+let blockedSites: {
+  site: string
+}[] = []
 
 // Fetch the list of blocked sites from a remote source
 const fetchBlockedSites = async () => {
   try {
-    // const response = await fetch('https://your-remote-url.com/blocked-sites.json')
-    // const data = await response.json()
-    blockedSites = ['https://ekantipur.com'] //data.sites
-    chrome.storage.local.set({ blockedSites })
+    const response = await fetch(
+      'https://cdn.jsdelivr.net/gh/awaken-nepali/12-bhai-blocker@main/data/sites.json',
+    )
+    const data = await response.json()
+    blockedSites = data //data.sites
+    chrome.storage.local.set({ blockedSites: JSON.stringify(blockedSites) })
     console.log('Blocked sites updated:', blockedSites)
     console.log('Blocked sites updated2:', blockedSites)
   } catch (error) {
