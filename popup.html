@@ -1,13 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/icon/logo.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chrome Extension + React + TS + Vite</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/popup/index.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 Bhai Media Blocker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 16px;
+width: 350px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 20px;
+      color: #d9534f;
+    }
+    p {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .notice {
+      background-color: #f8d7da;
+      padding: 10px;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      color: #721c24;
+      margin-top: 16px;
+    }
+    .github-link {
+      margin-top: 20px;
+    }
+    .github-link a {
+      color: #0366d6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .github-link a:hover {
+      text-decoration: underline;
+    }
+    .logo {
+      width: 80px; /* Adjust size as needed */
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://raw.githubusercontent.com/awaken-nepali/12-bhai-blocker/main/public/img/logo-128.png" alt="12 Bhai Media Logo" class="logo" />
+  
+  <h1>12 Bhai Media Blocker</h1>
+  <p>This extension helps users avoid misleading or propagandistic content from the 12 Bhai Media network. By activating this extension, you will automatically block access to websites associated with 12 Bhai Media, protecting yourself from potential misinformation and biased content.</p>
+
+  <div class="notice">
+    <strong>Note:</strong> This extension is designed to enhance your browsing experience by filtering content that may be harmful or unreliable.
+  </div>
+
+  <p>For any feedback, suggestions, or if you're interested in volunteering, please visit our GitHub page.</p>
+
+  <div class="github-link">
+    <a href="https://github.com/awaken-nepali/12-bhai-blocker/blob/main/data/sites.json" target="_blank">Join Us on GitHub</a>
+  </div>
+
+</body>
 </html>
